@@ -15,3 +15,30 @@ select * from CITY;
 4. Select By ID:
 select * from CITY
 where ID='1661';
+
+5. Japanese Cities' Attributes:
+Select * from CITY
+where COUNTRYCODE='JPN';
+
+6. Japanese Cities' Names:
+select NAME from CITY
+where COUNTRYCODE='JPN';
+
+7. Weather Observation Station 1:
+select CITY, STATE FROM STATION;
+
+8. Weather Observation Station 3:
+select distinct CITY FROM STATION
+WHERE ID % 2 = 0;
+
+9. Weather Observation Station 4:
+SELECT COUNT(CITY)- COUNT(DISTINCT CITY) AS DIFF FROM STATION; 
+
+10. Weather Observation Station 5:
+(Select CITY, length(CITY) FROM STATION
+ORDER BY length(CITY) DESC, CITY ASC
+LIMIT 1)
+UNION
+(Select CITY, length(CITY) FROM STATION
+ORDER BY length(CITY) ASC, CITY ASC
+LIMIT 1);
