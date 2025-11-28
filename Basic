@@ -1,0 +1,17 @@
+1. Revising the Select Query I:
+
+Select * from CITY
+where CountryCode='USA' 
+and POPULATION>100000;
+
+2. Revising the Select Query II:
+Select NAME from CITY
+where CountryCode='USA'
+and POPULATION > 120000;
+
+3. Select All:
+select * from CITY;
+
+4. Select By ID:
+select * from CITY
+where ID='1661';
