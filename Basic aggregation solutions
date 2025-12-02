@@ -18,5 +18,27 @@ select sum(population) from city
 where countrycode= 'JPN'
 
 6. Population Density Difference:
+select MAX(population)-MIN(population) as DIFF from city
 
+7. The Blunder:
+select ceiling(avg(salary)-avg(replace(salary,'0',''))) from employees
 
+8. Top Earners
+select months*salary as earnings, count(*) from employee
+group by earnings order by earnings desc limit 1
+
+9.Weather Observation Station 2
+select round(sum(lat_n),2), round(sum(long_w),2) from station
+
+10. Weather Observation Station 13:
+select truncate(sum(lat_n),4) from station
+where lat_n>38.7880 and lat_n<137.2345
+
+11. Weather Observation Station 14
+select truncate(lat_n,4) from station
+where lat_n<137.2345 
+order by lat_n desc limit 1
+
+12. Weather Observation Station 15:
+select round(long_w, 4) from station where
+lat_n=(select max(lat_n) from station where lat_n<137.2345)  
